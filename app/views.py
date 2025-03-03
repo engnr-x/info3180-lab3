@@ -29,11 +29,10 @@ def contact():
             email = contactform.email.data
             subject = contactform.subject.data
             message = contactform.message.data
-            # submit = SubmitField('Send')
             msg = Message(
                 contactform.subject.data,
                 sender=(contactform.name.data, contactform.email.data),
-                recipients=['your_test_email@example.com'])  # Replace with your recipient email
+                recipients=['demo-inbox@example.com'])
             msg.body= contactform.message.data
                    
             mail.send(msg)
