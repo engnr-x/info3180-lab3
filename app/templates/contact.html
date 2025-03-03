@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block main %}
+    <h2>Contact Us</h2>
+        <form method="POST" action="{{ url_for('contact') }}">
+            {{ form.csrf_token }}
+            <div class="form-group mb-3">
+                <label for="fullname" class="form-label">Full Name <span class="text-danger">*</span></label>
+                {{ form.name.label (class="form-label")}} {{ form.name(class="form-control") }}<br>
+                <!-- {{ form.name(size=32) }}<br> -->
+                
+            </div>
+            <div>
+                <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                {{ form.email.label (class="form-label") }} {{ form.email(class="form-control") }}<br>
+                <!-- {{ form.email(size=32) }}<br> -->
+            </div>
+            <div>
+                <label for="subject" class="form-label">Subject <span class="text-danger">*</span></label>
+                {{ form.subject.label (class="form-label")}} {{ form.subject(class="form-control") }}<br>
+                <!-- {{ form.subject(size=32) }}<br> -->
+            </div>
+            <div>
+                <label for="message" class="form-label">Message <span class="text-danger">*</span></label>
+                {{ form.message.label (class="form-label") }} {{ form.message(class="form-control")}}<br>
+                <!-- {{ form.message(rows=5, cols=50) }}<br> -->
+            </div>
+            <button class="btn btn-primary btn-lg" type="submit">Send Message</button>
+      
+    </form>
+
+
+
+{% endblock %}
